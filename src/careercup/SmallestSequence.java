@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 /**
  * http://www.careercup.com/question?id=5653018213089280
+ * 
+ * runs in n^2 time
  */
 public class SmallestSequence {
 
