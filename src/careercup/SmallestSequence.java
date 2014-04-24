@@ -42,6 +42,9 @@ public class SmallestSequence {
                     }
                     break;
                 }
+                if(i == 0 && j == variables.size() - 1) {
+                    smallestSequence = 0;
+                }
             }
 
         }
