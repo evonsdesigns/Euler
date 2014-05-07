@@ -6,6 +6,8 @@ package random;
 public class MergeSort {
 
     public static void main(String[] args) {
+
+        System.out.println();
         MergeSort mergeSort = new MergeSort();
         mergeSort.sort(new int[]{3, 2, 7, 4, 1, 9, 8, 6});
         mergeSort.sort(new int[]{3});
