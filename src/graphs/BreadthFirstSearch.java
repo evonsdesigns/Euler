@@ -1,8 +1,14 @@
 package graphs;
 
+import common.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Iterative approach to breadth first search
+ * Worst case O(|V|)
+ */
 public class BreadthFirstSearch {
 
     public static void main(String[] args) {
@@ -56,38 +62,5 @@ public class BreadthFirstSearch {
         return null;
     }
 
-    private static class Node {
-        private int key;
-        private Node left;
-        private Node right;
 
-        public Node(int key) {
-            this.key = key;
-        }
-
-        public int getKey() {
-            return key;
-        }
-
-        public Node getLeft() {
-            return left;
-        }
-
-        public void setLeft(Node left) {
-            this.left = left;
-        }
-
-        public Node getRight() {
-            return right;
-        }
-
-        public void setRight(Node right) {
-            this.right = right;
-        }
-
-        @Override
-        public String toString() {
-            return "Node: " + key;
-        }
-    }
 }
