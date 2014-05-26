@@ -1,12 +1,12 @@
 package common;
 
-public class Node {
+public class GraphNode {
         private int key;
-        private Node left;
-        private Node right;
+        private GraphNode left;
+        private GraphNode right;
         private boolean visited;
 
-        public Node(int key) {
+        public GraphNode(int key) {
             this.key = key;
         }
 
@@ -22,24 +22,24 @@ public class Node {
             return key;
         }
 
-        public Node getLeft() {
+        public GraphNode getLeft() {
             return left;
         }
 
-        public void setLeft(Node left) {
+        public void setLeft(GraphNode left) {
             this.left = left;
         }
 
-        public Node getRight() {
+        public GraphNode getRight() {
             return right;
         }
 
-        public void setRight(Node right) {
+        public void setRight(GraphNode right) {
             this.right = right;
         }
 
         @Override
         public String toString() {
-            return "Node: " + key;
+            return "GraphNode: " + key;
         }
 }

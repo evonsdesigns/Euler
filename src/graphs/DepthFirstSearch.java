@@ -1,6 +1,6 @@
 package graphs;
 
-import common.Node;
+import common.GraphNode;
 
 import java.util.Stack;
 
@@ -8,24 +8,24 @@ public class DepthFirstSearch {
 
 
     public static void main(String[] args) {
-        Node root = new Node(3);
-        Node left1 = new Node(5);
-        Node right1 = new Node(7);
+        GraphNode root = new GraphNode(3);
+        GraphNode left1 = new GraphNode(5);
+        GraphNode right1 = new GraphNode(7);
         root.setLeft(left1);
         root.setRight(right1);
 
-        Node left2 = new Node(6);
-        Node right2 = new Node(19);
+        GraphNode left2 = new GraphNode(6);
+        GraphNode right2 = new GraphNode(19);
 
-        Node left3 = new Node(35);
-        Node right3 = new Node(96);
+        GraphNode left3 = new GraphNode(35);
+        GraphNode right3 = new GraphNode(96);
         left1.setLeft(left2);
         left1.setRight(right2);
 
         right1.setLeft(left3);
         right1.setRight(right3);
 
-        Node left4 = new Node(44);
+        GraphNode left4 = new GraphNode(44);
         left2.setLeft(left4);
 
         DepthFirstSearch search = new DepthFirstSearch();
@@ -36,22 +36,22 @@ public class DepthFirstSearch {
     }
 
 
-    private Node find(int key, Node root) {
-        Stack<Node> nodes = new Stack<Node>();
-        nodes.push(root);
+    private GraphNode find(int key, GraphNode root) {
+        Stack<GraphNode> graphNodes = new Stack<GraphNode>();
+        graphNodes.push(root);
 
-        while(!nodes.isEmpty()) {
+        while(!graphNodes.isEmpty()) {
 
-            Node n = nodes.peek();
+            GraphNode n = graphNodes.peek();
             System.out.println("Looking at " + n);
             if(n.getLeft() != null && !n.getLeft().isVisited()) {
                 System.out.println("Pushing left " + n.getLeft());
-                nodes.push(n.getLeft());
+                graphNodes.push(n.getLeft());
                 continue;
             }
             if(n.getRight() != null && !n.getRight().isVisited()) {
                 System.out.println("Pushing right " + n.getRight());
-                nodes.push(n.getRight());
+                graphNodes.push(n.getRight());
                 continue;
             }
 
@@ -59,7 +59,7 @@ public class DepthFirstSearch {
                 return n;
             } else {
                 n.setVisited(true);
-                nodes.pop();
+                graphNodes.pop();
             }
         }
         return null;

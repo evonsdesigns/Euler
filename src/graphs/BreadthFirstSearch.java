@@ -1,6 +1,6 @@
 package graphs;
 
-import common.Node;
+import common.GraphNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -13,17 +13,17 @@ public class BreadthFirstSearch {
 
     public static void main(String[] args) {
 
-        Node root = new Node(3);
-        Node left1 = new Node(5);
-        Node right1 = new Node(7);
+        GraphNode root = new GraphNode(3);
+        GraphNode left1 = new GraphNode(5);
+        GraphNode right1 = new GraphNode(7);
         root.setLeft(left1);
         root.setRight(right1);
 
-        Node left2 = new Node(6);
-        Node right2 = new Node(19);
+        GraphNode left2 = new GraphNode(6);
+        GraphNode right2 = new GraphNode(19);
 
-        Node left3 = new Node(35);
-        Node right3 = new Node(96);
+        GraphNode left3 = new GraphNode(35);
+        GraphNode right3 = new GraphNode(96);
         left1.setLeft(left2);
         left1.setRight(right2);
 
@@ -38,25 +38,25 @@ public class BreadthFirstSearch {
     }
 
 
-    private Node find(int key, Node root){
-        Queue<Node> nodes = new LinkedList<>();
-        nodes.offer(root);
+    private GraphNode find(int key, GraphNode root){
+        Queue<GraphNode> graphNodes = new LinkedList<>();
+        graphNodes.offer(root);
 
-        while(!nodes.isEmpty()) {
-            Node n = nodes.peek();
+        while(!graphNodes.isEmpty()) {
+            GraphNode n = graphNodes.peek();
             System.out.println("Looking at " + n.getKey());
             if(n.getKey() == key) {
                 return n;
             }
             if(n.getLeft() != null) {
                 System.out.println("Queueing " + n.getLeft().getKey());
-                nodes.offer(n.getLeft());
+                graphNodes.offer(n.getLeft());
             }
             if(n.getRight() != null) {
                 System.out.println("Queueing " + n.getRight().getKey());
-                nodes.offer(n.getRight());
+                graphNodes.offer(n.getRight());
             }
-            nodes.poll();
+            graphNodes.poll();
         }
 
         return null;

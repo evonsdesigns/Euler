@@ -4,7 +4,6 @@ package problems;
  * Created by josep_000 on 3/6/14.
  */
 public class EvenFibonacciNumbers {
-
     public static void main(String[] args) {
 
         // brute force method
