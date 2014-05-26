@@ -1,4 +1,4 @@
-package random;
+package strings;
 
 /**
  * Created by josep_000 on 5/26/2014.

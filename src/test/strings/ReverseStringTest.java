@@ -1,7 +1,7 @@
-package test.random;
+package test.strings;
 
 import org.junit.Test;
-import random.ReverseString;
+import strings.ReverseString;
 
 import static org.junit.Assert.assertEquals;
 
